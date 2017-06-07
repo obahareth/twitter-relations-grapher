@@ -4,7 +4,7 @@ defmodule TwitterGrapher.Mixfile do
   def project do
     [app: :twitter_grapher,
      version: "0.0.1",
-     elixir: "~> 1.2",
+     elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -19,7 +19,7 @@ defmodule TwitterGrapher.Mixfile do
   def application do
     [mod: {TwitterGrapher, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :bolt_sips]]
   end
 
   # Specifies which paths to compile per environment.
@@ -32,8 +32,7 @@ defmodule TwitterGrapher.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.2.4"},
      {:phoenix_pubsub, "~> 1.0"},
-     {:phoenix_ecto, "~> 3.0"},
-     {:postgrex, ">= 0.0.0"},
+     {:bolt_sips, "~> 0.3"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},

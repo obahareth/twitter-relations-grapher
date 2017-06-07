@@ -34,10 +34,8 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :twitter_grapher, TwitterGrapher.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "twitter_grapher_dev",
-  hostname: "localhost",
-  pool_size: 10
+config :bolt_sips, Bolt,
+  hostname: 'localhost',
+  port: 7687,
+  pool_size: 10,
+  max_overflow: 5

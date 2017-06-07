@@ -21,10 +21,6 @@ defmodule TwitterGrapher.ChannelCase do
       use Phoenix.ChannelTest
 
       alias TwitterGrapher.Repo
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-
 
       # The default endpoint for testing
       @endpoint TwitterGrapher.Endpoint
@@ -32,12 +28,6 @@ defmodule TwitterGrapher.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TwitterGrapher.Repo)
-
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TwitterGrapher.Repo, {:shared, self()})
-    end
-
     :ok
   end
 end

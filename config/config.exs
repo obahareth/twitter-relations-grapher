@@ -5,10 +5,6 @@
 # is restricted to this project.
 use Mix.Config
 
-# General application configuration
-config :twitter_grapher,
-  ecto_repos: [TwitterGrapher.Repo]
-
 # Configures the endpoint
 config :twitter_grapher, TwitterGrapher.Endpoint,
   url: [host: "localhost"],

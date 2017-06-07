@@ -18,21 +18,12 @@ defmodule TwitterGrapher.Web do
 
   def model do
     quote do
-      use Ecto.Schema
-
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
     end
   end
 
   def controller do
     quote do
       use Phoenix.Controller
-
-      alias TwitterGrapher.Repo
-      import Ecto
-      import Ecto.Query
 
       import TwitterGrapher.Router.Helpers
       import TwitterGrapher.Gettext
@@ -64,11 +55,6 @@ defmodule TwitterGrapher.Web do
   def channel do
     quote do
       use Phoenix.Channel
-
-      alias TwitterGrapher.Repo
-      import Ecto
-      import Ecto.Query
-      import TwitterGrapher.Gettext
     end
   end
 

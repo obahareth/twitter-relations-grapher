@@ -12,6 +12,7 @@ defmodule TwitterGrapher do
       supervisor(TwitterGrapher.Endpoint, []),
       # Start your own worker by calling: TwitterGrapher.Worker.start_link(arg1, arg2, arg3)
       # worker(TwitterGrapher.Worker, [arg1, arg2, arg3]),
+      worker(Bolt.Sips, [Application.get_env(:bolt_sips, Bolt)])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

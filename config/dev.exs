@@ -36,6 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :bolt_sips, Bolt,
   hostname: 'localhost',
+  basic_auth: [username: System.get_env("NEO4J_USERNAME"),
+               password: System.get_env("NEO4J_PASSWORD")],
   port: 7687,
   pool_size: 10,
   max_overflow: 5

@@ -1,0 +1,6 @@
+<%= form_tag(twitter_path(@conn, :create), method: :post) %>
+  <div class="form-group">
+    <label for="screen_name">Screen Name</label>
+    <input type="text" class="form-control" name="screen_name" value="" autofocus/>
+  </div>
+</form>

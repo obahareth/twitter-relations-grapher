@@ -17,6 +17,9 @@ defmodule TwitterGrapher.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    
+    get "/store-twitter-relations", TwitterController, :new
+    post "/store-twitter-relations", TwitterController, :create
   end
 
   # Other scopes may use custom stacks.

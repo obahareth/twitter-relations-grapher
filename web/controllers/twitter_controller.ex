@@ -9,13 +9,11 @@ defmodule TwitterGrapher.TwitterController do
     user = Twitter.UserRetriever.user(screen_name)
     followers = Twitter.FollowerRetriever.followers(screen_name)
 
-    query = Neo4j.QueryBuilder.create_twitter_user_and_followers(user,
-                                                                 followers)
-
-    IO.puts query
-
-    db_conn = Bolt.Sips.conn
-    Bolt.Sips.query!(db_conn, query)
+    # Previously a single query was being built and executed only once to add
+    # all the nodes, the update_relationship approach executes multiple queries
+    # but will ensure no duplicate nodes/relations are created, this can be
+    # reduced into a single query once I get more familiar with neo4j.
+    Neo4j.Utils.update_relationship(twitter_user: user, followers: followers)
 
     text conn, "Successfully stored Twitter user and followers"
   end

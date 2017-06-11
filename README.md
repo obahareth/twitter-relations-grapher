@@ -8,7 +8,9 @@ This is just a basic [Phoenix](phoenixframework.org/) app configured with [Neo4j
 * Bolt sips 0.3
 
 ## Usage
-After running the Phoenix server, visit: localhost:4000/store-twitter-relations and enter your screen name. If you have a lot of followers you might need to wait a while. There's no graphing yet, you can view the graph in the Neo4j browser.
+After running the Phoenix server, visit: localhost:4000/store-twitter-relations and enter your screen name. If you have a lot of followers you might need to wait a while. There's no graphing yet, you can view the graph in the Neo4j browser:
+
+![neo4j-browser](screenshots/sample-graph.png)
 
 ## Issues
 * Twitter API rate limits are quite hindering, it takes a long time to gather the data, perhaps web scraping could be used instead.
